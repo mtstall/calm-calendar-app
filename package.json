@@ -1,0 +1,26 @@
+{
+  "name": "calm-calendar-app",
+  "version": "1.0.0",
+  "description": "AS A Work-From-Home worker   I WANT to be able to schedule meetings and events   SO THAT I can stay organized and have dedicated leisure time and activitities. ## ACCEPTANCE CRITERIA GIVEN a calendar web-app   WHEN I visit the site for the first time   THEN I am presented with the homepage, which includes a login and signup button   WHEN I choose to sign up   THEN I am prompted to create a username and password   WHEN I click on the sign-up button   THEN my user credentials are saved and I am logged into the site   WHEN I revisit the site at a later time and choose to sign in   THEN I am prompted to enter my username and password   WHEN I am signed in to the site   THEN I am directed to my own personal calendar   WHEN I click on a day   THEN I can add an event and time for that day   WHEN I look back at a past date   THEN I can view those saved events   WHEN I click on an event   THEN I am able to see the details of that event, edit or delete the event   WHEN I click on the logout option in the navigation   THEN I am signed out of the site   WHEN I am idle on the site for more than a set time   THEN I am able to view comments but I am prompted to log in again before I can add, update, or delete comments",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "eslint-config-airbnb": "^19.0.4"
+  },
+  "dependencies": {
+    "bcrypt": "^5.1.0",
+    "connect-session-sequelize": "^7.1.5",
+    "dotenv": "^16.0.3",
+    "express": "^4.18.2",
+    "express-handlebars": "^7.0.2",
+    "express-session": "^1.17.3",
+    "mysql2": "^3.2.0",
+    "sequelize": "^6.29.2"
+  }
+}
