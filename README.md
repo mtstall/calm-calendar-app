@@ -50,7 +50,7 @@ To touch on other project requirements
 --decide on our rules ESLINT  
 --decide who wants to be in what end of stack  
 --wire-frame (excalidraw)  
-
+//commented out
 
 ## CONTRIBUTORS
 Taylor Stallings  
