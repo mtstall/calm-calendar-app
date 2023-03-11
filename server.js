@@ -4,7 +4,7 @@ const express = require("express");
 const session = require("express-session");
 const exhbs = require("express-handlebars");
 // const helpers = require("./components/helpers");
-const hbs = exhbs.create({});
+const hbs = exhbs.create();
 
 //iniitialize express app
 const app = express();
