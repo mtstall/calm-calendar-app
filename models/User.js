@@ -4,38 +4,35 @@
 const { Model, DataTypes } = require("sequelize");
 const sequelize = require("../config/connection");
 
-class Event extends Model {}
+class User extends Model {}
 
-Event.init(
+User.init(
   {
     id: {
       type: DataTypes.INTEGER,
       allowNull: false,
+      primaryKey: true,
       autoIncrement: true,
     },
-    event_name: {
-      type: DataTypes.STRING,
+    userName: {
+      type: DataTypes.STRING(30),
       allowNull: false,
     },
-    description: {
-      type: DataTypes.TEXT,
-      allowNull: true,
+    email: {
+      type: DataTypes.STRING(60),
+      allowNull: false,
     },
-    userId: {
+    password: {
       type: DataTypes.STRING,
       allowNull: false,
-      references: {
-        model: "User",
-        key: "id",
-      },
     },
   },
   {
     sequelize,
     freezeTableName: true,
     underscored: true,
-    modelName: "Event",
+    modelName: "User",
   }
 );
 
-module.exports = Event;
+module.exports = User;
