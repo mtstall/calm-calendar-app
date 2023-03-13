@@ -11,6 +11,7 @@ Event.init(
     id: {
       type: DataTypes.INTEGER,
       allowNull: false,
+      primaryKey: true,
       autoIncrement: true,
     },
     event_name: {
@@ -28,6 +29,14 @@ Event.init(
         model: "User",
         key: "id",
       },
+    },
+    startTime: {
+      type: DataTypes.DATE,
+      allowNull: false,
+    },
+    endTime: {
+      type: DataTypes.DATE,
+      allowNull: false,
     },
   },
   {
