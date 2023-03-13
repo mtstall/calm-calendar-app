@@ -16,9 +16,8 @@ console.log("Hello hello");
 const sequelize = require("./config/connection");
 const SequelizeStore = require("connect-session-sequelize")(session.Store);
 
-//initializes routes
-// const userRoute = require("./routes/api/UserRoutes");
-const indexRoute = require("./routes/indexRoutes");
+//initializes controller routes
+const indexRoute = require("./controllers/index");
 
 // Set up sessions
 const sess = {
@@ -53,4 +52,7 @@ console.log("I've made it down here");
 
 //starts the server to begin listening
 
-app.listen(PORT, () => console.log("Server is now listening, yay: "));
+app.listen(PORT, () => {
+console.log("Server is now listening, yay: ");
+sequelize.sync({ force: false });
+});
