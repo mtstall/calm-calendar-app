@@ -5,6 +5,7 @@ const session = require("express-session");
 const exhbs = require("express-handlebars");
 // const helpers = require("./components/helpers");
 const hbs = exhbs.create();
+require("dotenv").config();
 
 //iniitialize express app
 const app = express();

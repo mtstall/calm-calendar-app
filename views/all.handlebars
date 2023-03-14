@@ -3,15 +3,30 @@
     <h1>Thanks for joining us, {{email}}!</h1>
     {{else}}
   <form action="/signup" method="post">
-    <h3>CALENDAR
-      or Log in</h3>
-    <div class="email">
+
+  <div class="row">
+    <h3 class="col s12">Log in or join!</h3>
+    <div class="col s6">
       <input
         type="email"
         name="emailInput"
         placeholder="youremail@emailaddress.com">
-      <button type="submit">submit</button>
+      <input
+        type="password"
+        name="passwordInput">
+      <button class="btn" type="submit">submit</button>
     </div>
+    <div class="col s6">
+      <input
+      type="email"
+      name="emailInput"
+      placeholder="youremail@emailaddress.com">
+      <input
+        type="password"
+        name="passwordInput">
+      <button class="btn" type="submit">submit</button>
+    </div>
+  </div>
   </form>
   {{/if}}
 </main>
