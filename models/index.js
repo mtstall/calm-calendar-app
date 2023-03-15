@@ -5,12 +5,13 @@
 const User = require("./User");
 const Event = require("./Event");
 // defined relationships between models
-Event.belongsTo(User, {
+
+User.hasMany(Event, {
   foreignKey: "userId",
   onDelete: "CASCADE",
 });
 
-User.hasMany(Event, {
+Event.belongsTo(User, {
   foreignKey: "userId",
 });
 
