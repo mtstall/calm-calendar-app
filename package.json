@@ -15,6 +15,9 @@
     "eslint-config-airbnb": "^19.0.4"
   },
   "dependencies": {
+    "@fullcalendar/core": "^6.1.4",
+    "@fullcalendar/daygrid": "^6.1.4",
+    "@fullcalendar/interaction": "^6.1.4",
     "bcrypt": "^5.1.0",
     "connect-session-sequelize": "^7.1.5",
     "dotenv": "^16.0.3",
