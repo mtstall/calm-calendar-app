@@ -22,8 +22,8 @@ Event.init(
       type: DataTypes.TEXT,
       allowNull: true,
     },
-    userId: {
-      type: DataTypes.STRING,
+    user_id: {
+      type: DataTypes.INTEGER,
       allowNull: false,
       references: {
         model: "User",

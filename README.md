@@ -5,7 +5,7 @@ I WANT to be able to schedule meetings and events
 SO THAT I can stay organized and have dedicated leisure time and activitities.
 ## ACCEPTANCE CRITERIA
 GIVEN a calendar web-app  
-WHEN I visit the site for the first time  
+WHEN I visit the site for the first time 
 THEN I am presented with the homepage, which includes a login and signup button  
 WHEN I choose to sign up  
 THEN I am prompted to create a username and password  
@@ -26,7 +26,7 @@ THEN I am signed out of the site
 WHEN I am idle on the site for more than a set time  
 THEN I am able to view comments but I am prompted to log in again before I can add, update, or delete comments  
 
-
+✅
 ### NODE AND EXPRESS
 Handles the CRUD routing. Sending back-end data to front, and vice versa. Being able to update, pull, post, puts….deletes….
 ### HANDLEBARS

@@ -6,14 +6,14 @@ const loginFormHandler = async (event) => {
     const password = document.querySelector('#password-login').value.trim();
   
     if (email && password) {
-    //   const response = await fetch('/api/users/login', {
-    //     method: 'POST',
-    //     body: JSON.stringify({ email, password }),
-    //     headers: { 'Content-Type': 'application/json' },
-    //   });
+      const response = await fetch('/api/users/login', {
+        method: 'POST',
+        body: JSON.stringify({ email, password }),
+        headers: { 'Content-Type': 'application/json' },
+      });
   
       if (response.ok) {
-        document.location.replace('/views/partials/calendar.handlebars');
+        document.location.replace('/calendar');
       } else {
         alert('Failed to log in.');
       }
@@ -27,14 +27,15 @@ const loginFormHandler = async (event) => {
     const password = document.querySelector('#password-signup').value.trim();
   
     if (email && password) {
-      const response = await fetch('/api/users', {
+      const response = await fetch('/api/users/signup', {
         method: 'POST',
         body: JSON.stringify({ email, password }),
         headers: { 'Content-Type': 'application/json' },
       });
   
       if (response.ok) {
-        document.location.replace('/views/partials/calendar.handlebars');
+        document.location.replace('calendar');
+        //add if statement to check email redundancy
       } else {
         alert('Failed to sign up.');
       }
