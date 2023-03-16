@@ -35,7 +35,6 @@ const loginFormHandler = async (event) => {
   
       if (response.ok) {
         document.location.replace('calendar');
-        //add if statement to check email redundancy
       } else {
         alert('Failed to sign up.');
       }
