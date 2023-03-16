@@ -4,7 +4,8 @@ const router = require("express").Router();
 // get route for homepage
 router.get("/", (req, res) => {
   try {
-    res.render("all", { title: "Calm Calendar" });
+    console.log(req.session)
+    res.render("all", { title: "Calm Calendar", loggedIn: req.session.loggedIn, email: req.session.email });
   } catch (err) {
     res.status(500).json(err);
   }

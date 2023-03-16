@@ -1,32 +1,26 @@
 <main class="landing-page">
-    {{#if email}}
-    <h1>Thanks for joining us, {{email}}!</h1>
-    {{else}}
-  <form action="/signup" method="post">
+  {{#if email}}
+  <h1>Thanks for joining us, {{email}}!</h1>
+  {{else}}
 
-  <div class="row">
-    <h3 class="col s12">Log in or join!</h3>
-    <div class="col s6">
-      <input
-        type="email"
-        name="emailInput"
-        placeholder="youremail@emailaddress.com">
-      <input
-        type="password"
-        name="passwordInput">
-      <button class="btn" type="submit">submit</button>
+  {{#if loggedIn}}
+  <h1>welcome back, {{email}}!</h1>
+  {{else}}
+
+  <form class="login-form">
+
+    <div class="row">
+      <h3 class="col s12">Please enter email and password below.</h3>
+      <div>
+        <input id="email-login" type="email" name="emailInput" placeholder="youremail@emailaddress.com">
+        <input id="password-login" type="password" name="passwordInput">
+        <button id="loginBtn" class="btn" type="submit">Login/Sign Up</button>
+      </div>
     </div>
-    <div class="col s6">
-      <input
-      type="email"
-      name="emailInput"
-      placeholder="youremail@emailaddress.com">
-      <input
-        type="password"
-        name="passwordInput">
-      <button class="btn" type="submit">submit</button>
-    </div>
-  </div>
   </form>
+  <script src="./JS/login.js"></script>
   {{/if}}
+  {{/if}}
+
+
 </main>

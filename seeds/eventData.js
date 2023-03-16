@@ -2,12 +2,14 @@ const { Event } = require("../models");
 
 const eventdata = [
     {
+        user_id:"1",
         event_name: 'Study',
         description: 'Study for bootcamp coding course',
         startTime: 'March 12, 2023 01:00:00',
         endTime: 'March 12, 2023 03:00:00',
     },
     {
+        user_id:"1",
         event_name: 'Work out',
         description: 'Go to the gym',
         startTime: 'March 12, 2023 03:00:00',
