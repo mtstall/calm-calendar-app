@@ -42,7 +42,7 @@ router.post('/login', async (req, res) => {
         email: req.body.email,
       },
     });
-
+console.log(dbUserData, "Is this working?");
     if (!dbUserData) {
       res
         .status(400)
