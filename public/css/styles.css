@@ -11,3 +11,18 @@ border-radius: 5px;
 .modal-overlay {
     display: none;
 }
+
+.parent {
+    padding: 20px;
+    margin: 20px;
+}
+
+.logoutButton {
+    padding: 20px;
+    margin: 40px;
+    
+}
+
+.logout {
+float: right;
+}
