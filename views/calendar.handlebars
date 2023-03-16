@@ -3,7 +3,23 @@
     <div class="logoutButton">
     <button id="logout" class="btn logout">Logout</button>
     </div>
-    <div id='calendar'></div>
+
+{{!-- trigger/open the modal --}}
+    <button id="addEvent" class="btn addEvent">Add Event</button>
+  {{!-- the modal --}}
+  <div id="addEventModal" class="modal">
+
+  <!-- Modal content -->
+  <div class="modal-content">
+    <span class="close">&times;</span>
+    {{!-- Add form here --}}
+    <p>Some text in the Modal..</p>
+  </div>
+</div>
+
+    {{!-- jquery calendar div --}}
+    <div id='calendar'>
+    </div>
 
 
 </main>
