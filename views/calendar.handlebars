@@ -13,7 +13,7 @@
   <div class="modal-content">
     <span class="close">&times;</span>
     {{!-- Add form here --}}
-    <form class="addEvent-form">
+    <form class="addEvent-form" id="addEvent-form">
 
     <div class="row">
       <h3 class="col s12">Add Event</h3>
@@ -33,14 +33,9 @@
     <div id='calendar'>
     </div>
 
-  <div onload = "loadData(event)">
-          {{#each events as |event|}}
-      <span data-title="{{event_name}}" data-start="{{startTime}}"></span>
-      {{/each}}
-  </div>
-
 
 
 </main>
 <script src="/js/calendar.js"></script>
 <script src="/js/logout.js"></script>
+{{!-- <script src="/js/new.js"></script> --}}

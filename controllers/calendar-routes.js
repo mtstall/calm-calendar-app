@@ -14,7 +14,6 @@ const { Event, User } = require("../models");
 // get route for user's events
 router.get("/", withAuth, async (req, res) => {
   try {
-    console.log(req.session.user_id);
     const eventData = await Event.findAll({
       where: {
         user_id: req.session.user_id,
@@ -26,9 +25,7 @@ router.get("/", withAuth, async (req, res) => {
         'endTime'
       ],
     });
-    console.log("hey");
     const events = eventData.map((event) => event.get({ plain: true}));
-    console.log("This is events: ",events);
 
     res.render('calendar',{ events }); // events has to be an object
   } catch (err) {

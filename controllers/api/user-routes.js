@@ -39,7 +39,7 @@ router.post("/login", async (req, res) => {
         email: req.body.email,
       },
     });
-    console.log(dbUserData, "Is this working?");
+    //console.log(dbUserData, "Is this working?");
     if (!dbUserData) {
       res
         .status(400)
@@ -50,7 +50,7 @@ router.post("/login", async (req, res) => {
     const userData = dbUserData.get({ plain: true });
 
     const validPassword = (req.body.password === userData.password);
-    console.log("Valid password: ",validPassword);
+    //console.log("Valid password: ",validPassword);
     if (!validPassword) {
       res
         .status(400)
@@ -62,7 +62,6 @@ router.post("/login", async (req, res) => {
       req.session.loggedIn = true;
       req.session.email = req.body.email;
       req.session.user_id = userData.id;
-      console.log("USERDATA ID:",userData.id);
 
       res
         .status(200)
