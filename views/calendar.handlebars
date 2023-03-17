@@ -13,13 +13,32 @@
   <div class="modal-content">
     <span class="close">&times;</span>
     {{!-- Add form here --}}
-    <p>Some text in the Modal..</p>
+    <form class="addEvent-form">
+
+    <div class="row">
+      <h3 class="col s12">Add Event</h3>
+      <div class="parent">
+        <input class="input" id="event-name" type="name" name="event-name" placeholder="Event name here">
+        <input class="input" id="event-description" type="description" name="event-description" placeholder="Describe your event">
+        <input class="input" id="event-start-time" type="startTime" name="event-start-time" placeholder="Event start time">
+        <input class="input" id="event-end-time" type="endTime" name="event-end-time" placeholder="Event end time">
+        <button id="addToCalendar" class="btn" type="submit">Add to calendar!</button>
+        </div>
+    </div>
+  </form>
   </div>
 </div>
 
     {{!-- jquery calendar div --}}
     <div id='calendar'>
     </div>
+
+  <div onload = "loadData(event)">
+          {{#each events as |event|}}
+      <span data-title="{{event_name}}" data-start="{{startTime}}"></span>
+      {{/each}}
+  </div>
+
 
 
 </main>

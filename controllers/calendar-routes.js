@@ -1,13 +1,48 @@
 const router = require("express").Router();
-//const { Event, User } = require("../models");
+const withAuth = require('../utils/auth');
+const { Event, User } = require("../models");
 
-// get route for homepage
-router.get("/", (req, res) => {
+// get route for calendar dashboard
+// router.get("/", (req, res) => {
+//   try {
+//     res.render("calendar", { title: "Your Calm Calendar" });
+//   } catch (err) {
+//     res.status(500).json(err);
+//   }
+// });
+
+// get route for user's events
+router.get("/", withAuth, async (req, res) => {
   try {
-    res.render("calendar", { title: "Your Calm Calendar" });
+    console.log(req.session.user_id);
+    const eventData = await Event.findAll({
+      where: {
+        user_id: req.session.user_id,
+      },
+      attributes: [
+        'event_name',
+        'description',
+        'startTime',
+        'endTime'
+      ],
+    });
+    console.log("hey");
+    const events = eventData.map((event) => event.get({ plain: true}));
+    console.log("This is events: ",events);
+
+    res.render('calendar',{ events }); // events has to be an object
   } catch (err) {
-    res.status(500).json(err);
+    res.status(500).json(err); // defining / pathway to go to 
   }
 });
+
+// add event route
+router.post("/", async (req, res) => {
+  try{
+
+  } catch (err) {
+
+  }
+})
 
 module.exports = router;

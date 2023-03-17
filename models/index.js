@@ -7,12 +7,12 @@ const Event = require("./Event");
 // defined relationships between models
 
 User.hasMany(Event, {
-  foreignKey: "userId",
+  foreignKey: "user_id",
   onDelete: "CASCADE",
 });
 
 Event.belongsTo(User, {
-  foreignKey: "userId",
+  foreignKey: "user_id",
 });
 
 module.exports = { User, Event };
