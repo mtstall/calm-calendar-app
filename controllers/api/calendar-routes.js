@@ -22,14 +22,14 @@ router.get("/", withAuth, async (req, res) => {
 // post route to create a new event
 router.post("/", withAuth, async (req, res) => {
     try {
-      console.log("You've hit the post route");
       const newEvent = await Event.create({
-        ...req.body,
+        event_name: req.body.event_name,
+        description: req.body.description,
         user_id: req.session.user_id,
+        startTime: req.body.startTime,
+        endTime: req.body.endTime,
       });
-      res.json(newEvent);
-  
-      res.status(200).json({ newEvent }); // events has to be an object
+      res.status(200).json(newEvent);
     } catch (err) {
       res.status(500).json(err); // defining / pathway to go to 
     }
