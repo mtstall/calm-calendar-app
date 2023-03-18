@@ -3,7 +3,6 @@
 
 const loginFormHandler = async (event) => {
   event.preventDefault();
-  console.log("My name is Conner.");
 
   const email = document.querySelector("#email-login").value.trim();
   const password = document.querySelector("#password-login").value.trim();
@@ -25,6 +24,7 @@ const loginFormHandler = async (event) => {
 
 const signupFormHandler = async (event) => {
   event.preventDefault();
+  console.log("you're hitting the signup form handler");
 
   const email = document.querySelector("#email-signup").value.trim();
   const password = document.querySelector("#password-signup").value.trim();
@@ -36,10 +36,8 @@ const signupFormHandler = async (event) => {
       headers: { "Content-Type": "application/json" },
     });
 
-    console.log(response);
-
     if (response.ok) {
-      document.location.replace("calendar");
+      document.location.replace("/calendar");
     } else {
       alert("Failed to sign up.");
     }

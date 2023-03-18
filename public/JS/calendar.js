@@ -27,8 +27,6 @@ const newEventHandler = async(event) => {
   const startTime = document.querySelector('#event-start-time').value;
   const endTime = document.querySelector('#event-end-time').value;
 
-  console.log("here is event name",event_name);
-
   const response = await fetch('/api/calendar', {
     method: 'POST',
     body: JSON.stringify({
@@ -41,12 +39,10 @@ const newEventHandler = async(event) => {
       'Content-Type': 'application/json',
     },
   });
-  console.log("right before response");
   if (response.ok) {
-    console.log("ok response");
-    document.location.replace('/calendar');
+
+  document.location.replace('/calendar');
   } else {
-    console.log("bad response");
     alert('Failed to add event');
   }
 
