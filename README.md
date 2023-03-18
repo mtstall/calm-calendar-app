@@ -48,6 +48,7 @@ To run this project, you will need to add the following environment variables to
 
 ## Demo
 <img width="1370" alt="landing-page" src="https://user-images.githubusercontent.com/115678318/226114806-1c2efaaa-286c-4373-a18b-05fed1776ae1.png">
+<img width="952" alt="calendar-dashboard" src="https://user-images.githubusercontent.com/114170872/226133734-cf6781ac-a9fe-47ab-a48c-0aaa9b88edce.png">
 
 
 ## Deployment
