@@ -12,6 +12,7 @@ New users must first sign-up, but then everything will be saved as desired.
 - environmental variables
 - FullCalendar.io (npm package)
 - session-Sequelize
+- Materialize CSS
 
 ## Installation
 
