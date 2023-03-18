@@ -53,6 +53,6 @@ console.log("I've made it down here");
 //starts the server to begin listening
 
 app.listen(PORT, () => {
-console.log("Server is now listening, yay: ");
-sequelize.sync({ force: false });
+  console.log("Server is now listening, yay: ");
+  sequelize.sync({ force: false });
 });

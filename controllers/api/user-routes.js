@@ -9,6 +9,7 @@ router.post("/signup", async (req, res) => {
       password: req.body.password,
     });
 
+    //store session
     req.session.save(() => {
       req.session.loggedIn = true;
       req.session.email = req.body.email;
@@ -39,7 +40,6 @@ router.post("/login", async (req, res) => {
         email: req.body.email,
       },
     });
-    //console.log(dbUserData, "Is this working?");
     if (!dbUserData) {
       res
         .status(400)
@@ -47,10 +47,9 @@ router.post("/login", async (req, res) => {
       return;
     }
 
+    //validate user password
     const userData = dbUserData.get({ plain: true });
-
-    const validPassword = (req.body.password === userData.password);
-    //console.log("Valid password: ",validPassword);
+    const validPassword = req.body.password === userData.password;
     if (!validPassword) {
       res
         .status(400)
@@ -58,6 +57,7 @@ router.post("/login", async (req, res) => {
       return;
     }
 
+    //store session for userdata
     req.session.save(() => {
       req.session.loggedIn = true;
       req.session.email = req.body.email;
@@ -73,7 +73,7 @@ router.post("/login", async (req, res) => {
   }
 });
 
-// Logout
+// Logout post route
 router.post("/logout", (req, res) => {
   if (req.session.loggedIn) {
     req.session.destroy(() => {
