@@ -15,7 +15,7 @@ router.get("/", withAuth, async (req, res) => {
     const events = eventData.map((event) => event.get({ plain: true }));
 
     // render events as object
-    res.render("calendar", { events });
+    res.render("calendar", { events, title: "Your Calm Calendar" });
   } catch (err) {
     res.status(500).json(err);
   }
