@@ -1,5 +1,4 @@
 //calendar page using FullCalender.io
-let userEvents = [];
 const calendarEl = document.getElementById("calendar");
 
 (async function () {
@@ -20,7 +19,7 @@ calendar.render();
 }) ()
 
 // add new event
-async function newEventHandler(event) {
+const newEventHandler = async(event) => {
   event.preventDefault();
   console.log("inside newEventHandler");
   const event_name = document.querySelector('#event-name').value;
@@ -54,10 +53,9 @@ async function newEventHandler(event) {
 }
 
 const addToCalendar = document.querySelector('#addToCalendar');
-document
-  .querySelector('#addToCalendar')
-  .addEventListener('submit', newEventHandler);
+addToCalendar.addEventListener('click', newEventHandler);
 
+//Modal javascript
 // Get the modal
 var modal = document.getElementById("addEventModal");
 
