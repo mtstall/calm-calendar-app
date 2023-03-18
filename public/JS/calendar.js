@@ -8,6 +8,7 @@ const calendarEl = document.getElementById("calendar");
   const formattedEvents = data.events.map((d) => {
     return { title: d.event_name, start: d.startTime.slice(0, 10) };
   });
+  console.log(formattedEvents);
   const calendar = new FullCalendar.Calendar(calendarEl, {
     initialView: "dayGridMonth",
     editable: true, // important for activating event interactions!
@@ -21,10 +22,13 @@ calendar.render();
 // add new event
 async function newEventHandler(event) {
   event.preventDefault();
+  console.log("inside newEventHandler");
   const event_name = document.querySelector('#event-name').value;
   const description = document.querySelector('#event-description').value;
   const startTime = document.querySelector('#event-start-time').value;
   const endTime = document.querySelector('#event-end-time').value;
+
+  console.log("here is event name",event_name);
 
   const response = await fetch('/api/calendar', {
     method: 'POST',
@@ -38,18 +42,21 @@ async function newEventHandler(event) {
       'Content-Type': 'application/json',
     },
   });
-
+  console.log("right before response");
   if (response.ok) {
+    console.log("ok response");
     document.location.replace('/calendar');
   } else {
+    console.log("bad response");
     alert('Failed to add event');
   }
 
 }
 
 const addToCalendar = document.querySelector('#addToCalendar');
-console.log(addToCalendar);
-addToCalendar.addEventListener('submit', newEventHandler);
+document
+  .querySelector('#addToCalendar')
+  .addEventListener('submit', newEventHandler);
 
 // Get the modal
 var modal = document.getElementById("addEventModal");
