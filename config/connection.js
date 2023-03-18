@@ -1,3 +1,6 @@
+//establishes sequelize connection
+//add your env credentials in .env file
+
 const Sequelize = require("sequelize");
 require("dotenv").config();
 

@@ -1,5 +1,4 @@
-//set event model for connecting to database
-//responsible for handling data and business logic
+//set Event model to connect to database
 
 const { Model, DataTypes } = require("sequelize");
 const sequelize = require("../config/connection");

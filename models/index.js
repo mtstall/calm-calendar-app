@@ -1,11 +1,9 @@
-// user to event: one to many
-// user to event: one to many
-// event to user: one to one
+//model dependencies so they can be used together
 
 const User = require("./User");
 const Event = require("./Event");
-// defined relationships between models
 
+//define relationships between models
 User.hasMany(Event, {
   foreignKey: "user_id",
   onDelete: "CASCADE",
