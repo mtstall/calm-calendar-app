@@ -1,7 +1,7 @@
 //model dependencies so they can be used together
 
 const User = require("./User");
-const Event = require("./Event");
+const Event = require("./event");
 
 //define relationships between models
 User.hasMany(Event, {
