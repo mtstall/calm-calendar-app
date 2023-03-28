@@ -54,6 +54,7 @@ To run this project, you will need to add the following environment variables to
 ## Deployment
 
 To see deployed site, click here:
+https://calm-calendar-app.herokuapp.com/
 
 ## Authors (alphabetical)
 
